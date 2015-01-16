@@ -54,7 +54,10 @@ class LinksController extends \BaseController {
 			}
 		}
 
-		return Redirect::to('/');
+		// Cookie that stores created code for one minute
+		$cookie = Cookie::make('linklist', $links, 1);
+
+		return Redirect::to('/')->withCookie($cookie);
 	}
 
 
