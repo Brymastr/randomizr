@@ -2,6 +2,12 @@
 
 class LinksController extends \BaseController {
 
+	protected $code;
+
+	public function __construct(Code $code) {
+		$this->code = $code;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -32,7 +38,13 @@ class LinksController extends \BaseController {
 	{
 		$input = Input::all();
 
-		echo $input;
+//		$url = 'http://randomizr.link/incoming/' . $this->code->getToken(25);
+		$url = $this->code->getToken(25);
+		$this->code->code = $url;
+
+		$this->code->save();
+
+//		return Redirect::to('/');
 	}
 
 
