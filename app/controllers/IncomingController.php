@@ -18,8 +18,13 @@ class IncomingController extends \BaseController {
 			->where('code_id', $code_id->id)
 			->get();
 
-		foreach($links as $link) {
-			echo $link->link;
-		}
+//		foreach($links as $link) {
+//			echo $link->link;
+//		}
+		$randomNumber = rand(0, count($links) - 1);
+
+		$chosenLink = $links[$randomNumber]->link;
+
+		return Redirect::to($chosenLink);
 	}
 }
