@@ -36,15 +36,25 @@ class LinksController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
-
 //		$url = 'http://randomizr.link/incoming/' . $this->code->getToken(25);
 		$url = $this->code->getToken(25);
 		$this->code->code = $url;
 
 		$this->code->save();
 
-//		return Redirect::to('/');
+		$links = array();
+		$links = Input::get('links');
+
+		foreach($links as $l) {
+			if(!empty($l)) {
+				$link = new Link();
+				$link->code_id = $this->code->id;
+				$link->link = $l;
+				$link->save();
+			}
+		}
+
+		return Redirect::to('/');
 	}
 
 

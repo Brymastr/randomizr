@@ -17,11 +17,11 @@
     <h1>Randomizr</h1>
     <h2>Randomizer of sites</h2>
     {{ Form::open(['route' => 'links.store']) }}
-    {{ Form::url('sites') }}
-    {{ Form::url('sites') }}
-    {{ Form::url('sites') }}
-    {{ Form::url('sites') }}
-    {{ Form::url('sites') }}
+    {{ Form::url('links[]') }}
+    {{ Form::url('links[]') }}
+    {{ Form::url('links[]') }}
+    {{ Form::url('links[]') }}
+    {{ Form::url('links[]') }}
     {{ Form::submit() }}
     {{ Form::close() }}
 </body>
