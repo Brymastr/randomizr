@@ -23,7 +23,6 @@ class LinksController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -31,7 +30,9 @@ class LinksController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+
+		echo $input;
 	}
 
 

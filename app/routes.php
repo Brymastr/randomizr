@@ -16,4 +16,4 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::resource('/links', 'LinksController');
+Route::resource('links', 'LinksController');
