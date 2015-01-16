@@ -24,7 +24,8 @@ class CreateBaseTables extends Migration {
 			$table->increments('id');
 
 			$table->string('link');
-			$table->foreign('code')->references('code')->on('codes');
+			$table->unsignedInteger('code_id');
+			$table->foreign('code_id')->references('id')->on('codes');
 
 			$table->nullableTimestamps();
 		});
