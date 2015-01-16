@@ -25,12 +25,12 @@ $message = Session::get('message');
     ?>
 
     {{ Form::open(['route' => 'links.store']) }}
-    {{ Form::url('links[]') }}
-    {{ Form::url('links[]') }}
-    {{ Form::url('links[]') }}
-    {{ Form::url('links[]') }}
-    {{ Form::url('links[]') }}
-    {{ Form::submit() }}
+        {{ Form::url('links[]') }}
+        {{ Form::url('links[]') }}
+        {{ Form::url('links[]') }}
+        {{ Form::url('links[]') }}
+        {{ Form::url('links[]') }}
+        {{ Form::submit() }}
     {{ Form::close() }}
 </body>
 </html>
