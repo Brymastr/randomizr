@@ -17,3 +17,4 @@ Route::any('/', function()
 });
 
 Route::resource('links', 'LinksController');
+Route::get('incoming/{code}', 'IncomingController@show');

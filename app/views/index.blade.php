@@ -20,7 +20,7 @@ $message = Session::get('message');
     <h2>Randomizer of sites</h2>
     <?php
     if(!empty($message)) {
-        echo HTML::link('http://192.168.0.16/randomizer/public/incoming/' . $message);
+        echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
     }
     ?>
 
