@@ -47,7 +47,7 @@ $error = Session::get('error');
         {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
 
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 input-area z-depth-2">
+            <div class="col-md-6 col-md-offset-3 input-area z-depth-1">
 
             <?php
             for($i = 0; $i < 10; $i++) {
