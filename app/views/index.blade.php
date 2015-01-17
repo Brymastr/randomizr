@@ -18,6 +18,7 @@ $error = Session::get('error');
     <title>Randomizr</title>
     {{ HTML::style('vendor/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::style('vendor/bootstrap/css/bootstrap-theme.min.css') }}
+    {{ HTML::style('vendor/materialize/css/materialize.min.css', ['media' => 'screen,projection']) }}
     {{ HTML::style('style/main.css') }} <!-- includes normalizer and main style -->
 </head>
 <body>
@@ -61,8 +62,8 @@ $error = Session::get('error');
         </div>
 
         <div class="row">
-            <div class="col-md-12 col-sm-12">
-                {{ Form::submit('submit', ['class' => 'btn-lg btn-success center-block']) }}
+            <div class="col-md-12 col-sm-12 center">
+                {{ Form::submit('submit', ['class' => 'btn-large waves-effect waves-light']) }}
             </div>
         </div>
 
@@ -75,6 +76,7 @@ $error = Session::get('error');
     <input type="number" id="field-counter" value="1" style="display: none"/>
 
     {{ HTML::script('vendor/jquery/jquery-2.1.3.min.js'); }}
+    {{ HTML::script('vendor/materialize/materialize.js'); }}
     {{ HTML::script('js/main.js'); }}
 </body>
 </html>
