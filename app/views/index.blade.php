@@ -24,11 +24,8 @@ $message = Session::get('message');
     <div class="container">
         <div class="row title">
             <h1 class="col-lg-12 col-md-12 col-sm-12 text-center">Randomizr</h1>
-        </div>
-
-        <div class="row">
             <p class="text-center">
-                Generate forwarding links to your desired sites
+                Generate psuedo-random forwarding links
             </p>
         </div>
 
