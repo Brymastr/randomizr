@@ -468,4 +468,11 @@ h1 {
   margin-top: 5vh;
   margin-bottom: 5vh; }
 
+a:hover {
+  text-decoration: none; }
+
+.false-link {
+  cursor: pointer;
+  color: #245580; }
+
 /*# sourceMappingURL=main.css.map */

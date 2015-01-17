@@ -31,8 +31,8 @@ $message = Session::get('message');
 
         {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
         <?php
-        for($i = 0; $i < 1; $i++) {
-            echo "<div class='row'>";
+        for($i = 0; $i < 10; $i++) {
+            echo "<div class='row' id='field-$i'>";
             echo "<div class='col-md-6 col-md-offset-3 col-sm-12 text-center'>";
             echo Form::url('links[]', null, ['class' => 'form-control input-lg text-center', 'placeholder' => 'URL']);
             echo "</div>";
@@ -41,10 +41,18 @@ $message = Session::get('message');
         ?>
 
         <div class="row">
-            <div class="col-md-12 col-sm-12">
-                {{ Form::submit(null, ['class' => 'btn-lg btn-success center-block']) }}
+            <div class="col-md-12 col-sm-12 text-center">
+                <span class="false-link" id="more-links">add link</span>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                {{ Form::submit('submit', ['class' => 'btn-lg btn-success center-block']) }}
+            </div>
+        </div>
+
+
 
         {{ Form::close() }}
 
@@ -60,8 +68,9 @@ $message = Session::get('message');
 
     </div>
 
+    <input type="number" id="field-counter" value="1" style="display: none"/>
+
     {{ HTML::script('vendor/jquery/jquery-2.1.3.min.js'); }}
-    {{ HTML::script('vendor/TextInputEffects/js/classie.js'); }}
     {{ HTML::script('js/main.js'); }}
 </body>
 </html>
