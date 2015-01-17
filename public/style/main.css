@@ -481,4 +481,9 @@ a:hover {
 .message {
   height: 50px; }
 
+.input-area {
+  background: white; }
+  .input-area .row {
+    margin-bottom: 0; }
+
 /*# sourceMappingURL=main.css.map */

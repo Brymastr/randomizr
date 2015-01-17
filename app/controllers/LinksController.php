@@ -27,7 +27,7 @@ class LinksController extends \BaseController {
 			return Redirect::back()->with('error', 'No links');
 		}
 
-		$url = $this->code->getToken(25);
+		$url = $this->code->getToken(5);
 		$this->code->code = $url;
 
 		$this->code->save();

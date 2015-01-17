@@ -35,7 +35,7 @@ $error = Session::get('error');
             <div class="col-md-12 col-sm-12 text-center">
                 <?php
                 if(!empty($message)) {
-                    echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
+                    echo HTML::link("http://192.168.0.16/randomizr/public/incoming/$message", "Here you go: $message");
                 }
                 if(!empty($error)) {
                     echo "Oops! " . $error;
@@ -45,15 +45,22 @@ $error = Session::get('error');
         </div>
 
         {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
-        <?php
-        for($i = 0; $i < 10; $i++) {
-            echo "<div class='row' id='field-$i'>";
-            echo "<div class='col-md-6 col-md-offset-3 col-sm-12 text-center'>";
-            echo Form::url('links[]', null, ['class' => 'form-control input-lg text-center', 'placeholder' => 'URL']);
-            echo "</div>";
-            echo "</div>";
-        }
-        ?>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 input-area z-depth-2">
+
+            <?php
+            for($i = 0; $i < 10; $i++) {
+                echo "<div class='row' id='field-$i'>";
+                echo "<div class='col-md-12 col-sm-12 text-center input-field'>";
+                echo Form::text('links[]', null, ['class' => 'validate text-center', 'id' => 'field']);
+                echo "<label for='field'>Test</label>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12 col-sm-12 text-center">
