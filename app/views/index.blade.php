@@ -35,7 +35,7 @@ $error = Session::get('error');
             <div class="col-md-12 col-sm-12 text-center">
                 <?php
                 if(!empty($message)) {
-                    echo HTML::link("http://107.170.244.76/incoming/$message", "Here you go: $message");
+                    echo HTML::link("http://randomizr.link/incoming/$message", "Here you go: $message");
                 }
                 if(!empty($error)) {
                     echo "Oops! " . $error;
