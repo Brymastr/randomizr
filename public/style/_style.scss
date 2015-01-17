@@ -1,3 +1,23 @@
+body {
+  background: #FFF176;
+  font-family: Raleway, sans-serif;
+  font-size: 20pt;
+}
+
 input {
   margin: 10px 0;
+}
+
+h1 {
+  font-size: 5vw;
+}
+
+@media all and (max-width: 960px) {
+  h1{
+    font-size: 40pt;
+  }
+}
+
+.title {
+  margin-top: 5vh;
 }

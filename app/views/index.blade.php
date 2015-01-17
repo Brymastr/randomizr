@@ -22,13 +22,19 @@ $message = Session::get('message');
 <body>
 
     <div class="container">
-        <div class="row">
+        <div class="row title">
             <h1 class="col-lg-12 col-md-12 col-sm-12 text-center">Randomizr</h1>
+        </div>
+
+        <div class="row">
+            <p class="text-center">
+                Generate forwarding links to your desired sites
+            </p>
         </div>
 
         {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
         <?php
-        for($i = 0; $i < 5; $i++) {
+        for($i = 0; $i < 1; $i++) {
             echo "<div class='row'>";
             echo "<div class='col-md-6 col-md-offset-3 col-sm-12 text-center'>";
             echo Form::url('links[]', null, ['class' => 'form-control input-lg text-center', 'placeholder' => 'URL']);
@@ -40,7 +46,6 @@ $message = Session::get('message');
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 {{ Form::submit(null, ['class' => 'btn-lg btn-success center-block']) }}
-
             </div>
         </div>
 
@@ -59,5 +64,7 @@ $message = Session::get('message');
     </div>
 
     {{ HTML::script('vendor/jquery/jquery-2.1.3.min.js'); }}
+    {{ HTML::script('vendor/TextInputEffects/js/classie.js'); }}
+    {{ HTML::script('js/main.js'); }}
 </body>
 </html>
