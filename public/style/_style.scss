@@ -4,10 +4,6 @@ body {
   font-size: 20pt;
 }
 
-input {
-//  margin: 10px 0;
-}
-
 h1 {
   font-size: 5vw;
   margin-bottom: 0;
@@ -20,7 +16,7 @@ h1 {
 }
 
 .title {
-  margin-top: 5vh;
+  margin-top: 4vh;
 }
 
 a:hover {
@@ -34,4 +30,8 @@ a:hover {
 
 .message {
   height: 50px;
+}
+
+.row {
+  margin-bottom: 0;
 }

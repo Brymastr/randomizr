@@ -24,7 +24,7 @@ class LinksController extends \BaseController {
 			}
 		}
 		if($empty) {
-			return Redirect::back()->with('error', 'No links added');
+			return Redirect::back()->with('error', 'No links');
 		}
 
 		$url = $this->code->getToken(25);

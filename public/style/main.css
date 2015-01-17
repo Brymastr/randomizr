@@ -462,7 +462,7 @@ h1 {
   h1 {
     font-size: 40pt; } }
 .title {
-  margin-top: 5vh; }
+  margin-top: 4vh; }
 
 a:hover {
   text-decoration: none; }
@@ -473,5 +473,8 @@ a:hover {
 
 .message {
   height: 50px; }
+
+.row {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
