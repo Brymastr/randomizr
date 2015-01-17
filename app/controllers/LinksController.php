@@ -39,7 +39,12 @@ class LinksController extends \BaseController {
 			if(!empty($l)) {
 				$link = new Link();
 				$link->code_id = $this->code->id;
-				$link->link = $l;
+				if((substr($l, 0, 7) != "http://") && (substr($l, 0, 8) != "https://")) {
+					$link->link = "http://$l";
+				} else {
+					$link->link = $l;
+				}
+
 				$link->save();
 			}
 		}
