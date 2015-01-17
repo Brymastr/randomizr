@@ -54,7 +54,7 @@ $error = Session::get('error');
                 echo "<div class='row' id='field-$i'>";
                 echo "<div class='col-md-12 col-sm-12 text-center input-field'>";
                 echo Form::text('links[]', null, ['class' => 'validate text-center', 'id' => 'field']);
-                echo "<label for='field'>Test</label>";
+                echo "<label for='field'>Website</label>";
                 echo "</div>";
                 echo "</div>";
             }
