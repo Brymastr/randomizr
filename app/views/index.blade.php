@@ -13,24 +13,51 @@ $message = Session::get('message');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Randomizr</title>
+    {{ HTML::style('vendor/bootstrap/css/bootstrap.min.css') }}
+    {{ HTML::style('vendor/bootstrap/css/bootstrap-theme.min.css') }}
+    {{ HTML::style('style/main.css') }} <!-- includes normalizer and main style -->
 </head>
 <body>
-    <h1>Randomizr</h1>
-    <h2>Randomizer of sites</h2>
-    <?php
-    if(!empty($message)) {
-        echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
-    }
-    ?>
 
-    {{ Form::open(['route' => 'links.store']) }}
-        {{ Form::url('links[]') }}
-        {{ Form::url('links[]') }}
-        {{ Form::url('links[]') }}
-        {{ Form::url('links[]') }}
-        {{ Form::url('links[]') }}
-        {{ Form::submit() }}
-    {{ Form::close() }}
+    <div class="container">
+        <div class="row">
+            <h1 class="col-lg-12 col-md-12 col-sm-12 text-center">Randomizr</h1>
+        </div>
+
+        {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
+        <?php
+        for($i = 0; $i < 5; $i++) {
+            echo "<div class='row'>";
+            echo "<div class='col-md-6 col-md-offset-3 col-sm-12 text-center'>";
+            echo Form::url('links[]', null, ['class' => 'form-control input-lg text-center', 'placeholder' => 'URL']);
+            echo "</div>";
+            echo "</div>";
+        }
+        ?>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                {{ Form::submit(null, ['class' => 'btn-lg btn-success center-block']) }}
+
+            </div>
+        </div>
+
+        {{ Form::close() }}
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <?php
+                if(!empty($message)) {
+                    echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
+                }
+                ?>
+            </div>
+        </div>
+
+    </div>
+
+    {{ HTML::script('vendor/jquery/jquery-2.1.3.min.js'); }}
 </body>
 </html>
