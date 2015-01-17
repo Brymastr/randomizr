@@ -465,8 +465,7 @@ h1 {
   h1 {
     font-size: 40pt; } }
 .title {
-  margin-top: 5vh;
-  margin-bottom: 5vh; }
+  margin-top: 5vh; }
 
 a:hover {
   text-decoration: none; }
@@ -474,5 +473,8 @@ a:hover {
 .false-link {
   cursor: pointer;
   color: #245580; }
+
+.message {
+  height: 50px; }
 
 /*# sourceMappingURL=main.css.map */

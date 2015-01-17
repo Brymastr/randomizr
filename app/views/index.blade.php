@@ -7,6 +7,7 @@
  */
 
 $message = Session::get('message');
+$error = Session::get('error');
 ?>
 
 <!doctype html>
@@ -27,6 +28,19 @@ $message = Session::get('message');
             <p class="text-center">
                 Generate psuedo-random forwarding links
             </p>
+        </div>
+
+        <div class="row message">
+            <div class="col-md-12 col-sm-12 text-center">
+                <?php
+                if(!empty($message)) {
+                    echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
+                }
+                if(!empty($error)) {
+                    echo "Oops! " . $error;
+                }
+                ?>
+            </div>
         </div>
 
         {{ Form::open(['route' => 'links.store', 'class' => 'form-horizontal']) }}
@@ -55,16 +69,6 @@ $message = Session::get('message');
 
 
         {{ Form::close() }}
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 text-center">
-                <?php
-                if(!empty($message)) {
-                    echo HTML::link('http://192.168.0.16/randomizr/public/incoming/' . $message);
-                }
-                ?>
-            </div>
-        </div>
 
     </div>
 

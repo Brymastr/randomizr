@@ -15,6 +15,18 @@ class LinksController extends \BaseController {
 	 */
 	public function store()
 	{
+		$input = Input::get('links');
+		$empty = true;
+		foreach($input as $i) {
+			if(!empty($i)) {
+				$empty = false;
+				break;
+			}
+		}
+		if($empty) {
+			return Redirect::back()->with('error', 'No links added');
+		}
+
 		$url = $this->code->getToken(25);
 		$this->code->code = $url;
 
@@ -31,9 +43,6 @@ class LinksController extends \BaseController {
 				$link->save();
 			}
 		}
-
-		// Cookie that stores created code for one minute
-//		$cookie = Cookie::make('linklist', $links, 1);
 
 		return Redirect::to('/')->with('message', $url);
 	}
