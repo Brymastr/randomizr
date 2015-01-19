@@ -81,7 +81,7 @@ $error = Session::get('error');
 
         <div class="row">
             <div class="col-md-12 col-sm-12 center">
-                {{ Form::submit('submit', ['class' => 'btn-large waves-effect waves-light']) }}
+                {{ Form::submit('submit', ['class' => 'btn-large waves-effect waves-light', 'id' => 'submit-form']) }}
             </div>
         </div>
 
