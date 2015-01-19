@@ -52,6 +52,7 @@ $(document).ready(function() {
 
     $('body').css({'background': '#' + color});
     $('#submit-form').css({'background-color': '#' + inverted})
+    $('#result > a').css({'color': '#' + inverted})
 });
 
 function invertHex(hexnum){

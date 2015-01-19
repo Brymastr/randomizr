@@ -43,7 +43,7 @@ $error = Session::get('error');
         </div>
 
         <div class="row message">
-            <div class="col-md-12 col-sm-12 text-center">
+            <div class="col-md-12 col-sm-12 text-center" id="result">
                 <?php
                 if(!empty($message)) {
                     echo HTML::link("http://randomizr.link/incoming/$message", "Here you go: $message");
